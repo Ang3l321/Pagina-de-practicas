@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Soacha Turística</title>
+    <link rel="stylesheet" href="CSS/Style.css">
+</head>
+<body>  
+    <!-- Header section -->
+    <header class="header">
+        <h1>Mi Soacha Turística</h1>
+    </header>
+
+    <!-- Main content container -->
+    <div class="container">
+        <!-- Main waterfall image -->
+        <img src="https://images.unsplash.com/photo-1511497584788-876760111969?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+             alt="Salto del Tequendama - Cascada en Soacha" 
+             class="main-image">
+
+        <!-- Button container with two rows -->
+        <div class="button-container">
+            <!-- First row of buttons -->
+            <div class="button-row">
+                <button class="btn" id="tequendama">Salto del Tequendama</button>
+                <button class="btn" id="museo">Museo Arqueológico de Soacha</button>
+                <button class="btn" id="boquemonte">Boquemonte Reserva Natural</button>
+            </div>
+            <!-- Second row of buttons -->
+            <div class="button-row">
+                <button class="btn" id="chicaque">Parque Natural Chicaque</button>
+                <button class="btn" id="neuta">Humedal Neuta</button>
+            </div>
+        </div>
+
+        <!-- Google Maps container with original styling -->
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63633.65424609901!2d-74.2549291874972!3d4.5754462671851455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f757d0cc35403%3A0x9ed118cab97d8e84!2sSoacha%2C%20Cundinamarca!5e0!3m2!1ses!2sco!4v1743904818734!5m2!1ses!2sco" 
+                    class="map" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Mapa de Soacha"></iframe>
+        </div>
+    </div>
+
+    <!-- Footer section -->
+    <footer class="footer">
+        <p>&copy; <span id="year"></span> Mi Soacha Turística. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="Script/script.js"></script>
+</body>
+</html>
