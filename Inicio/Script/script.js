@@ -8,7 +8,7 @@ function setupNavigation() {
         museo: "../Museo/museo.html",
         boquemonte: "../Boquemonte/boquemonte.html",
         chicaque: "../Chicaque/chicaque.html",
-        neuta: "../Neuta/neuta.html"
+        neuta: "../Humedal/Humedal.html"
     };
 
     // Asignar evento click a cada botón
