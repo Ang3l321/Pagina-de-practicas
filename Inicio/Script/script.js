@@ -7,7 +7,7 @@ function setupNavigation() {
         tequendama: "../Salto/salto.html",
         museo: "../Museo/museo.html",
         boquemonte: "../Boquemonte/boquemonte.html",
-        chicaque: "../Chicaque/chicaque.html",
+        chicaque: "../Paque/parque.html",
         neuta: "../Humedal/Humedal.html"
     };
 
