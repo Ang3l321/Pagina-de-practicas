@@ -1,13 +1,13 @@
-/* Estilos generales */
+/* ===== Estilos Generales ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #f9f9f9;
+    background-color: #f5f5f5;
     color: #333;
     line-height: 1.6;
 }
@@ -18,103 +18,188 @@ body {
     padding: 0 20px;
 }
 
-/* Encabezado */
-header {
-    background-color: #A00000;
-    color: white;
-    padding: 20px 0;
+/* Cambiar el color de los enlaces */
+a {
+    color: #ffffff; /* Cambia a tu color deseado */
+    text-decoration: none; /* Elimina el subrayado */
+}
+
+a:hover {
+    color: #ffcc00; /* Color al pasar el mouse */
+    text-decoration: underline; /* Opcional: subrayado al pasar el mouse */
+}
+
+/* Estilo para el botón */
+.btn {
+    display: inline-block;
+    background-color: #A00000; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 10px 20px;
+    border-radius: 5px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #800000; /* Color de fondo al pasar el mouse */
+}
+
+/* ===== Encabezado ===== */
+header {
+    background: linear-gradient(135deg, #A00000, #800000);
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 10px;
 }
 
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
 
+/* ===== Sección Hero ===== */
 .hero {
     position: relative;
     width: 100%;
-    height: 400px;
-    overflow: hidden;
-    margin-bottom: 40px;
+    margin: 40px 0;
 }
 
-.hero img {
+.hero-image {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.hero-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
-.hero-text {
+.hero-image:hover img {
+    transform: scale(1.02);
+}
+
+.hero-text-box {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.6);
+    bottom: 50px;
+    left: 50px;
+    background-color: #A00000;
     color: white;
-    padding: 20px;
-    max-width: 600px;
-    border-top-right-radius: 10px;
+    padding: 25px 35px;
+    border-radius: 8px;
+    max-width: 450px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border: 3px solid white;
 }
 
-.hero-text h2 {
-    font-size: 2rem;
+.hero-text-box h2 {
+    font-size: 2.2rem;
     margin-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-
-.activities {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin: 40px 0;
-    gap: 20px;
+.hero-text-box p {
+    font-size: 1.2rem;
+    opacity: 0.9;
 }
 
-.activity-card {
-    flex: 1 1 300px;
-    background: white;
-    border-radius: 10px;
-    padding: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.activity-card:hover {
-    transform: translateY(-5px);
-}
-
-.activity-icon {
-    font-size: 2.5rem;
-    color: #A00000;
-    margin-bottom: 15px;
-}
-
-.activity-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #A00000;
-}
-
-
-.map-section {
-    margin: 40px 0;
+/* ===== Sección Información ===== */
+.info-section {
+    margin: 50px 0;
     text-align: center;
+    padding: 0 10%;
 }
 
-.map-section h2 {
-    font-size: 2rem;
+.info-section h2 {
+    font-size: 2.2rem;
     color: #A00000;
     margin-bottom: 20px;
 }
 
+.info-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* ===== Actividades ===== */
+.activities {
+    margin: 60px 0;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    color: #A00000;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #A00000;
+}
+
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.activity-card {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.activity-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.activity-icon {
+    font-size: 3rem;
+    color: #A00000;
+    margin-bottom: 20px;
+}
+
+.activity-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #A00000;
+}
+
+/* ===== Mapa ===== */
+.map-section {
+    margin: 70px 0;
+}
+
 .map-container {
     width: 100%;
-    height: 400px;
-    border-radius: 10px;
+    height: 600px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border: 3px solid #A00000;
 }
 
 .map-container iframe {
@@ -123,65 +208,144 @@ header h1 {
     border: none;
 }
 
-/* Reseñas */
+/* ===== Reseñas ===== */
 .reviews {
-    margin: 60px 0;
-}
-
-.reviews h2 {
-    font-size: 2rem;
-    color: #A00000;
-    text-align: center;
-    margin-bottom: 30px;
+    margin: 80px 0;
 }
 
 .review-cards {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
 .review-card {
-    flex: 1 1 300px;
     background: white;
     border-radius: 10px;
-    padding: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
 }
 
 .stars {
     color: #FFD700;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
 }
 
 .review-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
     color: #A00000;
 }
 
 .reviewer {
     font-weight: bold;
-    margin-top: 15px;
     color: #555;
+    margin-top: 15px;
+    font-style: italic;
 }
 
-
+/* ===== Pie de Página ===== */
 footer {
-    background-color: #A00000;
+    background: linear-gradient(135deg, #A00000, #800000);
     color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
+    padding: 50px 0 30px;
+    margin-top: 80px;
 }
 
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: white;
+}
+
+.footer-section p {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: translateY(-5px);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
-    .activities, .review-cards {
-        flex-direction: column;
+    .hero-image {
+        height: 350px;
     }
-    
-    .hero {
-        height: 300px;
+
+    .hero-text-box {
+        bottom: 30px;
+        left: 30px;
+        padding: 20px;
+        max-width: 300px;
+    }
+
+    .hero-text-box h2 {
+        font-size: 1.8rem;
+    }
+
+    .map-container {
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text-box {
+        bottom: 20px;
+        left: 20px;
+        padding: 15px;
+        max-width: 250px;
+    }
+
+    .hero-text-box h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-text-box p {
+        font-size: 1rem;
     }
 }

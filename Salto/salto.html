@@ -10,54 +10,67 @@
 <body>
     <header>
         <div class="container">
-            <h1>Mi Soacha Turística</h1>
+            <a href="index.html" class="home-button">
+                <h1>Mi Soacha Turística</h1>
+            </a>
         </div>
     </header>
     
     <main class="container">
         <section class="hero">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Salto_del_Tequendama.jpg/1200px-Salto_del_Tequendama.jpg" alt="Salto del Tequendama">
-            <div class="hero-text">
-                <h2>Salto del Tequendama</h2>
-                <p>Una impresionante cascada de 157 metros de altura ubicada en el municipio de Soacha, Cundinamarca. Un espectáculo natural que combina belleza e historia.</p>
+            <div class="hero-image">
+                <img src="Salto.png" alt="Salto del Tequendama">
+                <div class="hero-text-box">
+                    <h2>Salto del Tequendama</h2>
+                    <p>Maravilla natural de Colombia</p>
+                </div>
             </div>
         </section>
         
+        <section class="info-section">
+            <h2>Conoce esta maravilla</h2>
+            <p>El Salto del Tequendama es una imponente cascada de aproximadamente 157 metros de altura ubicada a solo 30 km de Bogotá. Este monumento natural es uno de los más importantes del departamento de Cundinamarca y ofrece un espectáculo visual único.</p>
+        </section>
+        
         <section class="activities">
-            <div class="activity-card">
-                <div class="activity-icon">
-                    <i class="fas fa-hiking"></i>
+            <h2 class="section-title">Actividades</h2>
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-hiking"></i>
+                    </div>
+                    <h3>Senderismo</h3>
+                    <p>Disfruta de caminatas ecológicas por los alrededores de la cascada, con rutas para todos los niveles y paisajes impresionantes.</p>
                 </div>
-                <h3>Senderismo</h3>
-                <p>Disfruta de caminatas ecológicas por los alrededores de la cascada, con rutas para todos los niveles y paisajes impresionantes.</p>
-            </div>
-            
-            <div class="activity-card">
-                <div class="activity-icon">
-                    <i class="fas fa-eye"></i>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Contemplación</h3>
+                    <p>Admira la majestuosidad de esta cascada desde diferentes miradores estratégicos que ofrecen vistas panorámicas únicas.</p>
                 </div>
-                <h3>Contemplación</h3>
-                <p>Admira la majestuosidad de esta cascada desde diferentes miradores estratégicos que ofrecen vistas panorámicas únicas.</p>
-            </div>
-            
-            <div class="activity-card">
-                <div class="activity-icon">
-                    <i class="fas fa-camera"></i>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>Fotografía</h3>
+                    <p>Captura imágenes espectaculares del Salto del Tequendama, un lugar perfecto para fotógrafos profesionales y aficionados.</p>
                 </div>
-                <h3>Fotografía</h3>
-                <p>Captura imágenes espectaculares del Salto del Tequendama, un lugar perfecto para fotógrafos profesionales y aficionados.</p>
             </div>
         </section>
         
         <section class="map-section">
-            <h2>Ubicación</h2>
+            <h2 class="section-title">Ubicación</h2>
             <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.936209477318!2d-74.22749892468295!3d4.587895642249018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f7e8a0a5a5a5b%3A0x5a5a5a5a5a5a5a5a!2sSalto%20del%20Tequendama!5e0!3m2!1ses!2sco!4v1620000000000!5m2!1ses!2sco" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d9459.209130127425!2d-74.30160381582058!3d4.574702014035597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1ssalto%20del%20tequendama!5e0!3m2!1ses!2sco!4v1745543717034!5m2!1ses!2sco" allowfullscreen="" loading="lazy"></iframe>
             </div>
+            <a href="#seccion-deseada" class="btn">Ir a la sección</a>
         </section>
         
         <section class="reviews">
-            <h2>Reseñas de Visitantes</h2>
+            <h2 class="section-title">Reseñas de Visitantes</h2>
             <div class="review-cards">
                 <div class="review-card">
                     <div class="stars">
@@ -103,8 +116,25 @@
     
     <footer>
         <div class="container">
-            <p>&copy; 2023 Mi Soacha Turística - Todos los derechos reservados</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-envelope"></i> info@missoachaturistica.com</p>
+                    <p><i class="fas fa-phone"></i> +57 123 456 7890</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2024 Mi Soacha Turística - Todos los derechos reservados</p>
         </div>
     </footer>
+
+    <script src="JS/Salto.js"></script>
 </body>
 </html>

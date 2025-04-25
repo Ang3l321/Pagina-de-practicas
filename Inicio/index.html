@@ -4,74 +4,151 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Soacha Turística</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="CSS/Style.css">
 </head>
-<body>  
+<body>
     <!-- Header section -->
     <header class="header">
-        <h1>Mi Soacha Turística</h1>
+        <div class="container">
+            <h1>Mi Soacha Turística</h1>
+            <p>Descubre los tesoros naturales de nuestro municipio</p>
+        </div>
     </header>
 
-<!-- Carrusel de imágenes -->
-<div class="carousel-container">
-    <div class="carousel">
-        <div class="carousel-slide">
-            <img src="Imagenes/Tequendama.png" alt="Atractivo turístico 1 de Soacha">
-        </div>
-        <div class="carousel-slide">
-            <img src="Imagenes/Humedal.jpg" alt="Atractivo turístico 2 de Soacha">
-        </div>
-        <div class="carousel-slide">
-            <img src="Imagenes/Boquemonte.jpg" alt="Atractivo turístico 3 de Soacha">
-        </div>
-        <div class="carousel-slide">
-            <img src="Imagenes/museo.jpg" alt="Atractivo turístico 4 de Soacha">
-        </div>
-        <div class="carousel-slide">
-            <img src="Imagenes/Parque.jpg" alt="Atractivo turístico 5 de Soacha">
-        </div>
-    </div>
-
-    <button class="carousel-btn prev" aria-label="Anterior imagen">&#10094;</button>
-    <button class="carousel-btn next" aria-label="Siguiente imagen">&#10095;</button>
-    <div class="carousel-dots">
-        <span class="dot" data-slide="0"></span>
-        <span class="dot" data-slide="1"></span>
-        <span class="dot" data-slide="2"></span>
-        <span class="dot" data-slide="3"></span>
-        <span class="dot" data-slide="4"></span>
-    </div>
-</div>
-
-        <!-- Button container with two rows -->
-        <div class="button-container">
-            <!-- First row of buttons -->
-            <div class="button-row">
-                <button class="btn" id="tequendama">Salto del Tequendama</button>
-                <button class="btn" id="museo">Museo Arqueológico de Soacha</button>
-                <button class="btn" id="boquemonte">Boquemonte Reserva Natural</button>
+    <!-- Hero Carousel -->
+    <section class="hero-carousel">
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-slide active">
+                    <img src="Imagenes/Tequendama.png" alt="Salto del Tequendama">
+                    <div class="slide-caption">
+                        <h2>Salto del Tequendama</h2>
+                        <p>Majestuosa cascada de 157 metros de altura</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="Imagenes/Humedal.jpg" alt="Humedal Neuta">
+                    <div class="slide-caption">
+                        <h2>Humedal Neuta</h2>
+                        <p>Ecosistema único lleno de biodiversidad</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="Imagenes/Boquemonte.jpg" alt="Boquemonte">
+                    <div class="slide-caption">
+                        <h2>Boquemonte</h2>
+                        <p>Reserva natural con impresionantes paisajes</p>
+                    </div>
+                </div>
             </div>
-            <!-- Second row of buttons -->
-            <div class="button-row">
-                <button class="btn" id="chicaque">Parque Natural Chicaque</button>
-                <button class="btn" id="neuta">Humedal Neuta</button>
+
+            <button class="carousel-btn prev" aria-label="Anterior imagen">&#10094;</button>
+            <button class="carousel-btn next" aria-label="Siguiente imagen">&#10095;</button>
+            
+            <div class="carousel-dots">
+                <!-- Los puntos se generarán dinámicamente con JavaScript -->
             </div>
         </div>
+    </section>
 
-        <!-- Google Maps container with original styling -->
-        <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63633.65424609901!2d-74.2549291874972!3d4.5754462671851455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f757d0cc35403%3A0x9ed118cab97d8e84!2sSoacha%2C%20Cundinamarca!5e0!3m2!1ses!2sco!4v1743904818734!5m2!1ses!2sco" 
-                    class="map" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade"
-                    title="Mapa de Soacha"></iframe>
+    <!-- Atractivos Turísticos -->
+    <section class="attractions">
+        <div class="container">
+            <h2 class="section-title">Nuestros Atractivos</h2>
+            <div class="attractions-grid">
+                <a href="../Salto/Salto.html" class="attraction-card">
+                    <div class="attraction-image">
+                        <img src="Imagenes/Tequendama.png" alt="Salto del Tequendama">
+                    </div>
+                    <div class="attraction-info">
+                        <h3>Salto del Tequendama</h3>
+                        <p>Descubre esta imponente cascada natural</p>
+                        <a href="../Salto/Salto.html" class="btn-link">Ver más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </a>
+
+                <a href="museo.html" class="attraction-card">
+                    <div class="attraction-image">
+                        <img src="Imagenes/museo.jpg" alt="Museo Arqueológico">
+                    </div>
+                    <div class="attraction-info">
+                        <h3>Museo Arqueológico</h3>
+                        <p>Conoce la historia precolombina de Soacha</p>
+                        <span class="btn-link">Ver más <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a href="boquemonte.html" class="attraction-card">
+                    <div class="attraction-image">
+                        <img src="Imagenes/Boquemonte.jpg" alt="Boquemonte">
+                    </div>
+                    <div class="attraction-info">
+                        <h3>Boquemonte</h3>
+                        <p>Reserva natural con senderos ecológicos</p>
+                        <span class="btn-link">Ver más <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a href="chicaque.html" class="attraction-card">
+                    <div class="attraction-image">
+                        <img src="Imagenes/Parque.jpg" alt="Parque Chicaque">
+                    </div>
+                    <div class="attraction-info">
+                        <h3>Parque Chicaque</h3>
+                        <p>Bosque de niebla con diversidad de flora y fauna</p>
+                        <span class="btn-link">Ver más <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a href="neuta.html" class="attraction-card">
+                    <div class="attraction-image">
+                        <img src="Imagenes/Humedal.jpg" alt="Humedal Neuta">
+                    </div>
+                    <div class="attraction-info">
+                        <h3>Humedal Neuta</h3>
+                        <p>Importante ecosistema acuático</p>
+                        <span class="btn-link">Ver más <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Footer section -->
+    <!-- Mapa -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Ubicación</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63633.65424609901!2d-74.2549291874972!3d4.5754462671851455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f757d0cc35403%3A0x9ed118cab97d8e84!2sSoacha%2C%20Cundinamarca!5e0!3m2!1ses!2sco!4v1743904818734!5m2!1ses!2sco" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Mapa de Soacha"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
-        <p>&copy; <span id="year"></span> Mi Soacha Turística. Todos los derechos reservados.</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-envelope"></i> info@missoachaturistica.com</p>
+                    <p><i class="fas fa-phone"></i> +57 123 456 7890</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p class="copyright">&copy; <span id="year"></span> Mi Soacha Turística. Todos los derechos reservados.</p>
+        </div>
     </footer>
 
     <script src="Script/script.js"></script>

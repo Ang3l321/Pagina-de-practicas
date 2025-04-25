@@ -1,116 +1,64 @@
-// script.js - Funcionalidad completa para Mi Soacha Turística
+document.addEventListener('DOMContentLoaded', function() {
+    // Actualizar año en el footer
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-// Función para manejar la navegación
-function setupNavigation() {
-    const destinations = {
-        tequendama: "../Salto/salto.html",
-        museo: "../Museo/museo.html",
-        boquemonte: "../Boquemonte/boquemonte.html",
-        chicaque: "../Parque/parque.html",
-        neuta: "../Humedal/Humedal.html"
-    };
-
-    Object.keys(destinations).forEach(id => {
-        const button = document.getElementById(id);
-        if (button) {
-            button.addEventListener('click', function() {
-                if (destinations[id]) {
-                    window.location.href = destinations[id];
-                } else {
-                    console.warn(`Página para ${id} no configurada`);
-                    alert('Esta sección estará disponible pronto');
-                }
-            });
-        }
-    });
-}
-
-// Función para el carrusel de imágenes
-function setupCarousel() {
+    // Carrusel de imágenes
     const carousel = document.querySelector('.carousel');
     const slides = document.querySelectorAll('.carousel-slide');
+    const dotsContainer = document.querySelector('.carousel-dots');
+    let currentSlide = 0;
+    const slideCount = slides.length;
+
+    // Crear puntos de navegación
+    slides.forEach((_, index) => {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        dot.dataset.slide = index;
+        dotsContainer.appendChild(dot);
+    });
+
     const dots = document.querySelectorAll('.dot');
-    const prevBtn = document.querySelector('.prev');
-    const nextBtn = document.querySelector('.next');
-    
-    let currentIndex = 0;
-    const totalSlides = slides.length;
-    let autoplayInterval;
+    dots[0].classList.add('active');
 
-    function updateCarousel() {
-        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+    // Funciones del carrusel
+    function goToSlide(slideIndex) {
+        carousel.style.transform = `translateX(-${slideIndex * 100}%)`;
+        currentSlide = slideIndex;
         
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentIndex);
-        });
+        // Actualizar puntos activos
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[slideIndex].classList.add('active');
     }
 
-    function startAutoplay() {
-        autoplayInterval = setInterval(() => {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            updateCarousel();
-        }, 5000);
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slideCount;
+        goToSlide(currentSlide);
     }
 
-    function stopAutoplay() {
-        clearInterval(autoplayInterval);
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+        goToSlide(currentSlide);
     }
 
+    // Event listeners
+    document.querySelector('.next').addEventListener('click', nextSlide);
+    document.querySelector('.prev').addEventListener('click', prevSlide);
+
+    // Navegación por puntos
     dots.forEach(dot => {
         dot.addEventListener('click', function() {
-            currentIndex = parseInt(this.getAttribute('data-slide'));
-            updateCarousel();
-            stopAutoplay();
-            startAutoplay();
+            const slideIndex = parseInt(this.dataset.slide);
+            goToSlide(slideIndex);
         });
     });
-    
-    nextBtn.addEventListener('click', function() {
-        currentIndex = (currentIndex + 1) % totalSlides;
-        updateCarousel();
-        stopAutoplay();
-        startAutoplay();
-    });
-    
-    prevBtn.addEventListener('click', function() {
-        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-        updateCarousel();
-        stopAutoplay();
-        startAutoplay();
-    });
 
-    // Pausar autoplay al interactuar con el carrusel
-    carousel.addEventListener('mouseenter', stopAutoplay);
-    carousel.addEventListener('mouseleave', startAutoplay);
-    
-    updateCarousel();
-    startAutoplay();
-}
+    // Cambio automático cada 5 segundos
+    setInterval(nextSlide, 5000);
 
-// Función para actualizar el año en el footer
-function updateFooterYear() {
-    const yearElement = document.getElementById('year');
-    if (yearElement) {
-        yearElement.textContent = new Date().getFullYear();
-    }
-}
-
-// Función para animar botones al hacer clic
-function setupButtonEffects() {
-    document.querySelectorAll('.btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            this.classList.add('active');
-            setTimeout(() => this.classList.remove('active'), 200);
-        });
-    });
-}
-
-// Inicialización cuando el DOM está listo
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('Página cargada - iniciando funcionalidades');
-    
-    updateFooterYear();
-    setupNavigation();
-    setupButtonEffects();
-    setupCarousel();
+    // Efecto de carga suave
+    document.body.style.opacity = '0';
+    setTimeout(() => {
+        document.body.style.transition = 'opacity 0.5s ease';
+        document.body.style.opacity = '1';
+    }, 100);
 });
