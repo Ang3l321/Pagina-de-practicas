@@ -1,64 +1,113 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Actualizar año en el footer
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // 1. Actualizar año en el footer
+    const updateYear = () => {
+        document.getElementById('year').textContent = new Date().getFullYear();
+    };
 
-    // Carrusel de imágenes
-    const carousel = document.querySelector('.carousel');
-    const slides = document.querySelectorAll('.carousel-slide');
-    const dotsContainer = document.querySelector('.carousel-dots');
-    let currentSlide = 0;
-    const slideCount = slides.length;
+    // 2. Configuración del carrusel
+    const setupCarousel = () => {
+        const carousel = document.querySelector('.carousel');
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dotsContainer = document.querySelector('.carousel-dots');
+        let currentSlide = 0;
+        const slideCount = slides.length;
+        let carouselInterval;
 
-    // Crear puntos de navegación
-    slides.forEach((_, index) => {
-        const dot = document.createElement('span');
-        dot.classList.add('dot');
-        dot.dataset.slide = index;
-        dotsContainer.appendChild(dot);
-    });
+        // Crear puntos de navegación
+        const createDots = () => {
+            slides.forEach((_, index) => {
+                const dot = document.createElement('span');
+                dot.classList.add('dot');
+                dot.dataset.slide = index;
+                dotsContainer.appendChild(dot);
+            });
+        };
 
-    const dots = document.querySelectorAll('.dot');
-    dots[0].classList.add('active');
+        // Actualizar estado activo
+        const updateActiveState = (slideIndex) => {
+            document.querySelectorAll('.dot').forEach(dot => {
+                dot.classList.toggle('active', parseInt(dot.dataset.slide) === slideIndex);
+            });
+        };
 
-    // Funciones del carrusel
-    function goToSlide(slideIndex) {
-        carousel.style.transform = `translateX(-${slideIndex * 100}%)`;
-        currentSlide = slideIndex;
+        // Ir a slide específico
+        const goToSlide = (slideIndex) => {
+            carousel.style.transform = `translateX(-${slideIndex * 100}%)`;
+            currentSlide = slideIndex;
+            updateActiveState(slideIndex);
+        };
+
+        // Slide siguiente
+        const nextSlide = () => goToSlide((currentSlide + 1) % slideCount);
         
-        // Actualizar puntos activos
-        dots.forEach(dot => dot.classList.remove('active'));
-        dots[slideIndex].classList.add('active');
-    }
+        // Slide anterior
+        const prevSlide = () => goToSlide((currentSlide - 1 + slideCount) % slideCount);
 
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % slideCount;
-        goToSlide(currentSlide);
-    }
+        // Iniciar autoplay
+        const startAutoplay = () => {
+            carouselInterval = setInterval(nextSlide, 5000);
+        };
 
-    function prevSlide() {
-        currentSlide = (currentSlide - 1 + slideCount) % slideCount;
-        goToSlide(currentSlide);
-    }
+        // Configurar eventos
+        const setupEvents = () => {
+            document.querySelector('.next').addEventListener('click', () => {
+                nextSlide();
+                resetAutoplay();
+            });
+            
+            document.querySelector('.prev').addEventListener('click', () => {
+                prevSlide();
+                resetAutoplay();
+            });
 
-    // Event listeners
-    document.querySelector('.next').addEventListener('click', nextSlide);
-    document.querySelector('.prev').addEventListener('click', prevSlide);
+            document.querySelectorAll('.dot').forEach(dot => {
+                dot.addEventListener('click', () => {
+                    goToSlide(parseInt(dot.dataset.slide));
+                    resetAutoplay();
+                });
+            });
+        };
 
-    // Navegación por puntos
-    dots.forEach(dot => {
-        dot.addEventListener('click', function() {
-            const slideIndex = parseInt(this.dataset.slide);
-            goToSlide(slideIndex);
+        // Reiniciar autoplay
+        const resetAutoplay = () => {
+            clearInterval(carouselInterval);
+            startAutoplay();
+        };
+
+        // Inicializar
+        createDots();
+        updateActiveState(0);
+        setupEvents();
+        startAutoplay();
+    };
+
+    // 3. Funcionalidad de los botones "Ver más"
+    const setupAttractionButtons = () => {
+        document.querySelectorAll('.attraction-card').forEach(card => {
+            card.addEventListener('click', (e) => {
+                // Verificar si el clic no fue en un enlace interno
+                if (!e.target.closest('.btn-link')) {
+                    const link = card.querySelector('a[href]');
+                    if (link) {
+                        window.location.href = link.getAttribute('href');
+                    }
+                }
+            });
         });
-    });
+    };
 
-    // Cambio automático cada 5 segundos
-    setInterval(nextSlide, 5000);
+    // 4. Efecto de carga suave
+    const setupPageTransition = () => {
+        document.body.style.opacity = '0';
+        setTimeout(() => {
+            document.body.style.transition = 'opacity 0.5s ease';
+            document.body.style.opacity = '1';
+        }, 100);
+    };
 
-    // Efecto de carga suave
-    document.body.style.opacity = '0';
-    setTimeout(() => {
-        document.body.style.transition = 'opacity 0.5s ease';
-        document.body.style.opacity = '1';
-    }, 100);
+    // Inicializar todas las funciones
+    updateYear();
+    setupCarousel();
+    setupAttractionButtons();
+    setupPageTransition();
 });

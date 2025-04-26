@@ -55,101 +55,111 @@
     <!-- Atractivos Turísticos -->
     <section class="attractions">
         <div class="container">
-            <h2 class="section-title">Nuestros Atractivos</h2>
-            <div class="attractions-grid">
-                <a href="../Salto/Salto.html" class="attraction-card">
-                    <div class="attraction-image">
-                        <img src="Imagenes/Tequendama.png" alt="Salto del Tequendama">
-                    </div>
-                    <div class="attraction-info">
-                        <h3>Salto del Tequendama</h3>
-                        <p>Descubre esta imponente cascada natural</p>
-                        <a href="../Salto/Salto.html" class="btn-link">Ver más <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </a>
-
-                <a href="museo.html" class="attraction-card">
-                    <div class="attraction-image">
-                        <img src="Imagenes/museo.jpg" alt="Museo Arqueológico">
-                    </div>
-                    <div class="attraction-info">
-                        <h3>Museo Arqueológico</h3>
-                        <p>Conoce la historia precolombina de Soacha</p>
-                        <span class="btn-link">Ver más <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </a>
-
-                <a href="boquemonte.html" class="attraction-card">
-                    <div class="attraction-image">
-                        <img src="Imagenes/Boquemonte.jpg" alt="Boquemonte">
-                    </div>
-                    <div class="attraction-info">
-                        <h3>Boquemonte</h3>
-                        <p>Reserva natural con senderos ecológicos</p>
-                        <span class="btn-link">Ver más <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </a>
-
-                <a href="chicaque.html" class="attraction-card">
-                    <div class="attraction-image">
-                        <img src="Imagenes/Parque.jpg" alt="Parque Chicaque">
-                    </div>
-                    <div class="attraction-info">
-                        <h3>Parque Chicaque</h3>
-                        <p>Bosque de niebla con diversidad de flora y fauna</p>
-                        <span class="btn-link">Ver más <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </a>
-
-                <a href="neuta.html" class="attraction-card">
-                    <div class="attraction-image">
-                        <img src="Imagenes/Humedal.jpg" alt="Humedal Neuta">
-                    </div>
-                    <div class="attraction-info">
-                        <h3>Humedal Neuta</h3>
-                        <p>Importante ecosistema acuático</p>
-                        <span class="btn-link">Ver más <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </a>
+          <h2 class="section-title">Nuestros Atractivos</h2>
+          <div class="attractions-grid">
+            <div class="attraction-card" data-href="../Salto/Salto.html">
+              <div class="attraction-image">
+                <img src="Imagenes/Tequendama.png" alt="Salto del Tequendama" loading="lazy">
+              </div>
+              <div class="attraction-info">
+                <h3>Salto del Tequendama</h3>
+                <p>Descubre esta imponente cascada natural</p>
+                <a href="../Salto/Salto.html" class="btn-link">Ver más <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+      
+    <!-- Repetir la misma estructura para las otras tarjetas -->
+        <div class="attraction-card" data-href="museo.html">
+            <div class="attraction-image">
+                <img src="Imagenes/museo.jpg" alt="Museo Arqueológico" loading="lazy">
+            </div>
+            <div class="attraction-info">
+                <h3>Museo Arqueológico</h3>
+                <p>Conoce la historia precolombina de Soacha</p>
+                <a href="../museo/museo.html" class="btn-link">Ver más <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
-    </section>
 
-    <!-- Mapa -->
-    <section class="map-section">
-        <div class="container">
-            <h2 class="section-title">Ubicación</h2>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63633.65424609901!2d-74.2549291874972!3d4.5754462671851455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f757d0cc35403%3A0x9ed118cab97d8e84!2sSoacha%2C%20Cundinamarca!5e0!3m2!1ses!2sco!4v1743904818734!5m2!1ses!2sco" 
-                        allowfullscreen="" 
+        <div class="attraction-card" data-href="boquemonte.html">
+            <div class="attraction-image">
+                <img src="Imagenes/Boquemonte.jpg" alt="Boquemonte">
+            </div>
+            <div class="attraction-info">
+                <h3>Boquemonte</h3>
+                <p>Reserva natural con senderos ecológicos</p>
+                <a href="../Boquemonte/Boquemonte.html" class="btn-link">Ver más <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+        
+        <div class="attraction-card" data-href="chicaque.html">
+            <div class="attraction-image">
+                <img src="Imagenes/Parque.jpg" alt="Parque Chicaque">
+            </div>
+            <div class="attraction-info">
+                <h3>Parque Chicaque</h3>
+                <p>Bosque de niebla con diversidad de flora y fauna</p>
+                <a href="../Parque/Parque.html" class="btn-link">Ver más <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+        
+        <div class="attraction-card" data-href="neuta.html">
+            <div class="attraction-image">
+                <img src="Imagenes/Humedal.jpg" alt="Humedal Neuta">
+            </div>
+            <div class="attraction-info">
+                <h3>Humedal Neuta</h3>
+                <p>Importante ecosistema acuático</p>
+                <a href="../Humedal/Humedal.html" class="btn-link">Ver más <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+     </div>
+    </div>
+</section>
+
+<!-- Mapa -->
+<section class="map-section">
+    <div class="container">
+        <h2 class="section-title">Ubicación</h2>
+        <div class="map-wrapper">
+            <div class="map-responsive-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d53509.204978417285!2d-74.24759047562496!3d4.576874587953879!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f757d0cc35403%3A0x9ed118cab97d8e84!2sSoacha%2C%20Cundinamarca!5e0!3m2!1ses!2sco!4v1745709423184!5m2!1ses!2sco" 
+                        allowfullscreen 
                         loading="lazy" 
                         referrerpolicy="no-referrer-when-downgrade"
-                        title="Mapa de Soacha"></iframe>
+                        class="responsive-iframe"
+                        title="Mapa interactivo de Soacha"></iframe>
+              </div>
+            <div class="map-controls">
+                <button class="btn-map" id="zoom-in">+ Ampliar</button>
+                <button class="btn-map" id="zoom-out">- Reducir</button>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Contacto</h3>
-                    <p><i class="fas fa-envelope"></i> info@missoachaturistica.com</p>
-                    <p><i class="fas fa-phone"></i> +57 123 456 7890</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Síguenos</h3>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                    </div>
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-envelope"></i> info@missoachaturistica.com</p>
+                <p><i class="fas fa-phone"></i> +57 123 456 7890</p>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
+        </div>
+        <div class="footer-bottom">
             <p class="copyright">&copy; <span id="year"></span> Mi Soacha Turística. Todos los derechos reservados.</p>
         </div>
-    </footer>
+    </div>
+</footer>
 
     <script src="Script/script.js"></script>
 </body>
