@@ -1,135 +1,64 @@
-document.addEventListener('DOMContentLoaded', () => {
-    console.log("Página del Salto del Tequendama cargada");
+// Espera que todo el DOM esté cargado
+document.addEventListener('DOMContentLoaded', function () {
+    // Seleccionar el formulario y elementos del resumen
+    const tourBookingForm = document.getElementById('tourBookingForm');
+    const summaryDate = document.querySelector('#summaryDate span');
+    const summaryTime = document.querySelector('#summaryTime span');
+    const summaryTransport = document.querySelector('#summaryTransport span');
+    const summaryParticipants = document.querySelector('#summaryParticipants span');
+    const totalCost = document.getElementById('totalCost');
 
-    aplicarEfectoCargaSuave();
-    animarTarjetas();
-    configurarBotonInicio();
-    configurarFormularioReserva();
-});
+    // Precios de transporte
+    const transportPrices = {
+        shuttle: 20000, // COP
+        private: 50000,
+        self: 0
+    };
 
-/**
- * Aplica un efecto de carga suave al cuerpo de la página.
- */
-function aplicarEfectoCargaSuave() {
-    document.body.style.opacity = '0';
-    setTimeout(() => {
-        document.body.style.transition = 'opacity 0.5s ease';
-        document.body.style.opacity = '1';
-    }, 100);
-}
+    // Función para actualizar el resumen y el costo total
+    function updateSummary() {
+        const date = document.getElementById('tourDate').value;
+        const time = document.getElementById('tourTime').value;
+        const transport = document.getElementById('transportType').value;
+        const participants = parseInt(document.getElementById('participants').value) || 0;
 
-/**
- * Aplica animaciones a las tarjetas de actividades y reseñas.
- */
-function animarTarjetas() {
-    const cards = document.querySelectorAll('.activity-card, .review-card');
-    cards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'all 0.5s ease';
+        // Actualizar los textos del resumen
+        summaryDate.textContent = date || 'Fecha no seleccionada';
+        summaryTime.textContent = time || 'Hora no seleccionada';
 
-        setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-        }, 200 + (index * 100));
-    });
-}
-
-/**
- * Configura la funcionalidad del botón para redirigir a la página de inicio.
- */
-function configurarBotonInicio() {
-    const botonInicio = document.querySelector('.home-button');
-    if (botonInicio) {
-        botonInicio.addEventListener('click', (event) => {
-            event.preventDefault();
-            window.location.href = '../Inicio/index.html';
-        });
-    }
-}
-
-/**
- * Configura el formulario de reservas con validación y actualización en tiempo real.
- */
-function configurarFormularioReserva() {
-    // Configurar fecha mínima (hoy)
-    document.getElementById('tourDate').min = new Date().toISOString().split('T')[0];
-
-    // Actualizar resumen en tiempo real
-    const formInputs = document.querySelectorAll('#tourBookingForm input, #tourBookingForm select');
-    formInputs.forEach(input => {
-        input.addEventListener('change', updateBookingSummary);
-    });
-
-    // Manejar envío del formulario
-    document.getElementById('tourBookingForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const formData = {
-            date: document.getElementById('tourDate').value,
-            time: document.getElementById('tourTime').value,
-            transport: document.getElementById('transportType').value,
-            participants: document.getElementById('participants').value
-        };
-        
-        // Validación básica
-        if (!formData.date || !formData.time || !formData.transport || !formData.participants) {
-            alert('Por favor completa todos los campos requeridos');
-            return;
+        if (transport === 'shuttle') {
+            summaryTransport.textContent = 'Shuttle Turístico ($20.000 COP)';
+        } else if (transport === 'private') {
+            summaryTransport.textContent = 'Transporte Privado ($50.000 COP)';
+        } else if (transport === 'self') {
+            summaryTransport.textContent = 'Mi propio transporte (sin costo)';
+        } else {
+            summaryTransport.textContent = 'Transporte no seleccionado';
         }
-        
-        // Aquí normalmente enviarías los datos a un servidor
-        console.log('Datos de reserva:', formData);
-        
-        // Mensaje de confirmación
-        alert(`¡Reserva confirmada para el ${formData.date} a las ${formData.time}!\n\nTransporte: ${getTransportText(formData.transport)}\nPersonas: ${formData.participants}`);
-        
-        // Resetear formulario (opcional)
-        this.reset();
-        updateBookingSummary();
-    });
-}
 
-/**
- * Actualiza el resumen de la reserva en tiempo real.
- */
-function updateBookingSummary() {
-    // Obtener valores del formulario
-    const date = document.getElementById('tourDate').value;
-    const time = document.getElementById('tourTime').value;
-    const transport = document.getElementById('transportType').value;
-    const participants = document.getElementById('participants').value || 0;
-    
-    // Actualizar resumen
-    document.getElementById('summaryDate').innerHTML = 
-        `<i class="fas fa-calendar-check"></i> <span>${date || 'Fecha no seleccionada'}</span>`;
-    
-    document.getElementById('summaryTime').innerHTML = 
-        `<i class="fas fa-clock"></i> <span>${time ? time + ' hrs' : 'Hora no seleccionada'}</span>`;
-    
-    document.getElementById('summaryTransport').innerHTML = 
-        `<i class="fas fa-bus"></i> <span>${getTransportText(transport)}</span>`;
-    
-    document.getElementById('summaryParticipants').innerHTML = 
-        `<i class="fas fa-users"></i> <span>${participants} persona(s)</span>`;
-    
-    // Calcular costo total
-    let transportCost = 0;
-    if (transport === 'shuttle') transportCost = 20000;
-    if (transport === 'private') transportCost = 50000;
-    
-    const totalCost = transportCost * parseInt(participants);
-    document.getElementById('totalCost').textContent = `$${totalCost.toLocaleString('es-CO')} COP`;
-}
+        summaryParticipants.textContent = `${participants} persona${participants !== 1 ? 's' : ''}`;
 
-/**
- * Devuelve el texto descriptivo para el tipo de transporte seleccionado.
- */
-function getTransportText(transport) {
-    switch(transport) {
-        case 'shuttle': return 'Shuttle Turístico';
-        case 'private': return 'Transporte Privado';
-        case 'self': return 'Propio transporte';
-        default: return 'Transporte no seleccionado';
+        // Calcular el total: costo de transporte + entrada ($10.000 por persona)
+        const transportCost = transportPrices[transport] || 0;
+        const entryFee = 10000; // Valor de entrada en COP
+        const total = (entryFee + transportCost) * participants;
+
+        // Actualizar el total en formato colombiano
+        totalCost.textContent = `$${total.toLocaleString('es-CO')} COP`;
     }
-}
+
+    // Detectar cambios en todos los campos del formulario
+    ['tourDate', 'tourTime', 'transportType', 'participants'].forEach(id => {
+        document.getElementById(id).addEventListener('input', updateSummary);
+    });
+
+    // Establecer la fecha mínima para hoy
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('tourDate').setAttribute('min', today);
+
+    // Evitar que el formulario recargue la página al enviarse
+    tourBookingForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        alert('¡Reserva enviada con éxito! 🌟 Gracias por confiar en Mi Soacha Turística.');
+    });
+});

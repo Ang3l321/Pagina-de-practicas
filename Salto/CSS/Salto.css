@@ -1,57 +1,108 @@
-/* ===== Estilos Generales ===== */
+:root {
+    /* Variables de color */
+    --primary-color: #A00000;
+    --primary-dark: #800000;
+    --secondary-color: #FFD700;
+    --text-color: #333;
+    --text-light: #f5f5f5;
+    --bg-color: #f5f5f5;
+    --white: #ffffff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s ease;
+}
+
+/* ===== Reset y Base ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #f5f5f5;
-    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
     line-height: 1.6;
 }
 
+a {
+    color: var(--white);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
 .container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Cambiar el color de los enlaces */
-a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #ffcc00;
-    text-decoration: underline;
-}
-
-/* Estilo para el botón */
+/* ===== Componentes ===== */
 .btn {
     display: inline-block;
-    background-color: #A00000;
-    color: white;
+    background: var(--primary-color);
+    color: var(--white);
     padding: 10px 20px;
     border-radius: 5px;
-    text-align: center;
     font-size: 1rem;
-    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
 }
 
 .btn:hover {
-    background-color: #800000;
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
 }
 
-/* ===== Encabezado ===== */
+.section-title {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--primary-color);
+}
+
+.card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    margin-bottom: 30px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* ===== Header ===== */
 header {
-    background: linear-gradient(135deg, #A00000, #800000);
-    color: white;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--white);
     padding: 30px 0;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow);
 }
 
 header h1 {
@@ -59,15 +110,9 @@ header h1 {
     margin-bottom: 10px;
 }
 
-header p {
-    font-size: 1.2rem;
-    opacity: 0.9;
-}
-
-/* ===== Sección Hero ===== */
+/* ===== Hero ===== */
 .hero {
     position: relative;
-    width: 100%;
     margin: 40px 0;
 }
 
@@ -76,7 +121,7 @@ header p {
     height: 500px;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow);
 }
 
 .hero-image img {
@@ -94,281 +139,165 @@ header p {
     position: absolute;
     bottom: 50px;
     left: 50px;
-    background-color: #A00000;
-    color: white;
+    background: rgba(160, 0, 0, 0.9);
+    color: var(--white);
     padding: 25px 35px;
     border-radius: 8px;
     max-width: 450px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    border: 3px solid white;
+    box-shadow: var(--shadow);
+    border: 3px solid var(--white);
 }
 
-.hero-text-box h2 {
-    font-size: 2.2rem;
-    margin-bottom: 10px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-.hero-text-box p {
-    font-size: 1.2rem;
-    opacity: 0.9;
-}
-
-/* ===== Sección Información ===== */
-.info-section {
-    margin: 50px 0;
-    text-align: center;
-    padding: 0 10%;
-}
-
-.info-section h2 {
-    font-size: 2.2rem;
-    color: #A00000;
-    margin-bottom: 20px;
-}
-
-.info-section p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-}
-
-/* ===== Actividades ===== */
-.activities {
+/* ===== Secciones ===== */
+.info-section,
+.activities-section,
+.map-section,
+.reviews-section,
+.booking-section {
+    background: var(--white);
+    padding: 60px 20px;
     margin: 60px 0;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
 }
 
-.section-title {
-    font-size: 2.2rem;
-    color: #A00000;
-    text-align: center;
-    margin-bottom: 40px;
-    position: relative;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background-color: #A00000;
-}
-
+/* ===== Activities ===== */
 .activities-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
+    margin-top: 40px;
 }
 
 .activity-card {
-    background: white;
+    background: var(--bg-color);
+    padding: 40px 20px;
     border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    border: 2px solid var(--primary-color);
+    box-shadow: var(--shadow);
     text-align: center;
+    transition: var(--transition);
 }
 
 .activity-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    background: var(--white);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
 }
 
 .activity-icon {
     font-size: 3rem;
-    color: #A00000;
+    color: var(--primary-color);
     margin-bottom: 20px;
 }
 
 .activity-card h3 {
-    font-size: 1.6rem;
-    margin-bottom: 15px;
-    color: #A00000;
+    margin: 20px 0;
+    color: var(--primary-dark);
 }
 
-/* ===== Mapa ===== */
-.map-section {
-    margin: 70px 0;
-}
-
+/* ===== Map ===== */
 .map-container {
     width: 100%;
-    height: 600px;
+    max-width: 1000px;
+    margin: 0 auto;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    border: 3px solid #A00000;
+    box-shadow: var(--shadow);
+    border: 3px solid var(--primary-color);
 }
 
 .map-container iframe {
     width: 100%;
     height: 100%;
-    border: none;
+    border: 0;
 }
 
-/* ===== Reseñas ===== */
-.reviews {
-    margin: 80px 0;
-}
-
+/* ===== Reviews ===== */
 .review-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
+    margin-top: 40px;
 }
 
 .review-card {
-    background: white;
-    border-radius: 10px;
+    background: var(--bg-color);
     padding: 30px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    border-radius: 10px;
+    border-left: 5px solid var(--primary-color);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
 }
 
 .review-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-hover);
 }
 
 .stars {
-    color: #FFD700;
-    margin-bottom: 15px;
+    color: var(--secondary-color);
     font-size: 1.2rem;
-}
-
-.review-card h3 {
-    font-size: 1.4rem;
     margin-bottom: 15px;
-    color: #A00000;
 }
 
 .reviewer {
-    font-weight: bold;
-    color: #555;
     margin-top: 15px;
+    font-weight: bold;
+    color: var(--primary-dark);
     font-style: italic;
+    text-align: right;
 }
 
-/* ===== Sección de Reservas ===== */
-.booking-section {
-    background-color: #fff;
-    padding: 60px 0;
-    margin: 60px 0;
-    border-radius: 10px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
+/* ===== Booking ===== */
 .booking-form-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
-}
-
-#tourBookingForm {
-    display: grid;
-    gap: 25px;
+    gap: 30px;
 }
 
 .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+    margin-bottom: 20px;
 }
 
 .form-group label {
+    display: block;
+    margin-bottom: 8px;
     font-weight: 600;
-    color: #A00000;
-    display: flex;
-    align-items: center;
-    gap: 10px;
 }
 
 .form-group input,
 .form-group select {
-    padding: 12px 15px;
-    border: 2px solid #ddd;
-    border-radius: 6px;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
     font-size: 1rem;
-    transition: all 0.3s ease;
 }
 
-.form-group input:focus,
-.form-group select:focus {
-    border-color: #A00000;
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(160, 0, 0, 0.1);
-}
-
-.booking-btn {
-    background-color: #A00000;
-    color: white;
-    border: none;
-    padding: 15px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 10px;
-}
-
-.booking-btn:hover {
-    background-color: #800000;
-    transform: translateY(-2px);
-}
-
-.booking-summary {
-    background-color: #f9f9f9;
-    padding: 30px;
-    border-radius: 8px;
-    border: 2px solid #A00000;
-}
-
-.booking-summary h3 {
-    color: #A00000;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.summary-content p {
+.checkbox-container {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 15px;
-    font-size: 1.05rem;
 }
 
-.summary-content i {
-    color: #A00000;
-    width: 20px;
-    text-align: center;
+.checkbox-cost {
+    color: var(--primary-color);
+    font-weight: 600;
 }
 
-.summary-total {
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 2px dashed #A00000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.summary-content {
+    background: var(--bg-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border: 1px solid #ddd;
 }
 
-.summary-total h4 {
-    color: #A00000;
-    font-size: 1.2rem;
-}
-
-#totalCost {
-    font-weight: 700;
-    font-size: 1.3rem;
-    color: #A00000;
-}
-
-/* ===== Pie de Página ===== */
+/* ===== Footer ===== */
 footer {
-    background: linear-gradient(135deg, #A00000, #800000);
-    color: white;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--white);
     padding: 50px 0 30px;
     margin-top: 80px;
 }
@@ -380,49 +309,20 @@ footer {
     margin-bottom: 40px;
 }
 
-.footer-section h3 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    position: relative;
-    padding-bottom: 10px;
-}
-
-.footer-section h3::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50px;
-    height: 2px;
-    background-color: white;
-}
-
-.footer-section p {
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
 .social-icons {
     display: flex;
     gap: 15px;
 }
 
 .social-icons a {
-    color: white;
     font-size: 1.5rem;
-    transition: transform 0.3s ease;
+    color: var(--white);
+    transition: var(--transition);
 }
 
 .social-icons a:hover {
+    color: var(--secondary-color);
     transform: translateY(-5px);
-}
-
-.copyright {
-    text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* ===== Responsive ===== */
@@ -430,40 +330,37 @@ footer {
     .hero-image {
         height: 350px;
     }
-
     .hero-text-box {
         bottom: 30px;
         left: 30px;
         padding: 20px;
         max-width: 300px;
     }
-
-    .hero-text-box h2 {
-        font-size: 1.8rem;
-    }
-
     .map-container {
         height: 400px;
     }
-    
-    .booking-form-container {
+    .booking-form-container,
+    .activities-grid,
+    .review-cards {
         grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 480px) {
     .hero-text-box {
-        bottom: 20px;
-        left: 20px;
-        padding: 15px;
-        max-width: 250px;
+        position: relative;
+        bottom: auto;
+        left: auto;
+        max-width: 100%;
+        margin: 20px;
     }
-
-    .hero-text-box h2 {
-        font-size: 1.5rem;
+    header h1 {
+        font-size: 2rem;
     }
-
-    .hero-text-box p {
-        font-size: 1rem;
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .map-container {
+        height: 300px;
     }
 }
