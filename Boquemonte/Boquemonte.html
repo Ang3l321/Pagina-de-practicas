@@ -3,61 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salto del Tequendama - Mi Soacha Turística</title>
+    <title>Parque Boquemonte - Mi Soacha Turística</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="CSS/Boquemonte.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Mi Soacha Turística</h1>
+            <a href="../index.html" class="home-button">
+                <h1>Mi Soacha Turística</h1>
+            </a>
         </div>
     </header>
     
     <main class="container">
         <section class="hero">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Salto_del_Tequendama.jpg/1200px-Salto_del_Tequendama.jpg" alt="Salto del Tequendama">
-            <div class="hero-text">
-                <h2>Salto del Tequendama</h2>
-                <p>Una impresionante cascada de 157 metros de altura ubicada en el municipio de Soacha, Cundinamarca. Un espectáculo natural que combina belleza e historia.</p>
+            <div class="hero-image">
+                <img src="../Inicio/Imagenes/Boquemonte.jpg" alt="Parque Boquemonte">
+                <div class="hero-text-box">
+                    <h2>Parque Boquemonte</h2>
+                    <p>Reserva natural de impresionante belleza</p>
+                </div>
             </div>
         </section>
         
+        <section class="info-section">
+            <h2>Conoce este paraíso natural</h2>
+            <p>El Parque Boquemonte es una reserva natural ubicada en Soacha, conocida por sus impresionantes paisajes, senderos ecológicos y diversidad de flora y fauna. Con más de 100 hectáreas de extensión, es el lugar perfecto para conectar con la naturaleza y disfrutar de actividades al aire libre.</p>
+        </section>
+        
         <section class="activities">
-            <div class="activity-card">
-                <div class="activity-icon">
-                    <i class="fas fa-hiking"></i>
+            <h2 class="section-title">Actividades</h2>
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-hiking"></i>
+                    </div>
+                    <h3>Senderismo</h3>
+                    <p>Explora más de 10 km de senderos ecológicos con diferentes niveles de dificultad, rodeados de naturaleza virgen.</p>
                 </div>
-                <h3>Senderismo</h3>
-                <p>Disfruta de caminatas ecológicas por los alrededores de la cascada, con rutas para todos los niveles y paisajes impresionantes.</p>
-            </div>
-            
-            <div class="activity-card">
-                <div class="activity-icon">
-                    <i class="fas fa-eye"></i>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3>Cascadas naturales</h3>
+                    <p>Descubre las hermosas cascadas que se forman en la reserva durante la temporada de lluvias.</p>
                 </div>
-                <h3>Contemplación</h3>
-                <p>Admira la majestuosidad de esta cascada desde diferentes miradores estratégicos que ofrecen vistas panorámicas únicas.</p>
-            </div>
-            
-            <div class="activity-card">
-                <div class="activity-icon">
-                    <i class="fas fa-camera"></i>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-campground"></i>
+                    </div>
+                    <h3>Camping</h3>
+                    <p>Vive la experiencia de acampar en zonas designadas, bajo un manto de estrellas.</p>
                 </div>
-                <h3>Fotografía</h3>
-                <p>Captura imágenes espectaculares del Salto del Tequendama, un lugar perfecto para fotógrafos profesionales y aficionados.</p>
             </div>
         </section>
         
         <section class="map-section">
-            <h2>Ubicación</h2>
+            <h2 class="section-title">Ubicación</h2>
             <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.936209477318!2d-74.22749892468295!3d4.587895642249018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f7e8a0a5a5a5b%3A0x5a5a5a5a5a5a5a5a!2sSalto%20del%20Tequendama!5e0!3m2!1ses!2sco!4v1620000000000!5m2!1ses!2sco" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.521274299383!2d-74.23420392475911!3d4.684430341960564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9c3a6a9e8b3f%3A0x1a7a7a7a7a7a7a7a!2sParque%20Boquemonte%2C%20Soacha!5e0!3m2!1ses!2sco!4v1620000000000!5m2!1ses!2sco" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </section>
         
         <section class="reviews">
-            <h2>Reseñas de Visitantes</h2>
+            <h2 class="section-title">Reseñas de Visitantes</h2>
             <div class="review-cards">
                 <div class="review-card">
                     <div class="stars">
@@ -67,22 +79,9 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <h3>Impresionante</h3>
-                    <p>La vista es espectacular, el sonido del agua cayendo es relajante. Un lugar que todos deberían visitar al menos una vez.</p>
-                    <p class="reviewer">- María González</p>
-                </div>
-                
-                <div class="review-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                    <h3>Belleza natural</h3>
-                    <p>El lugar es hermoso, aunque recomiendo ir temprano para evitar aglomeraciones. La infraestructura turística ha mejorado mucho.</p>
-                    <p class="reviewer">- Carlos Rodríguez</p>
+                    <h3>Experiencia inolvidable</h3>
+                    <p>Los senderos son espectaculares y bien señalizados. La vista desde el mirador principal es simplemente impresionante. Volveré sin duda.</p>
+                    <p class="reviewer">- Juan Pérez</p>
                 </div>
                 
                 <div class="review-card">
@@ -93,9 +92,66 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <h3>Experiencia única</h3>
-                    <p>La energía del lugar es increíble. La cascada es más imponente de lo que imaginaba. Solo cuidado con el clima.</p>
-                    <p class="reviewer">- Ana Martínez</p>
+                    <h3>Naturaleza pura</h3>
+                    <p>Ideal para desconectarse de la ciudad. Recomiendo llevar buen calzado para caminar y disfrutar de todos los recorridos.</p>
+                    <p class="reviewer">- Laura Gómez</p>
+                </div>
+                
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <h3>Excelente para familias</h3>
+                    <p>Llevé a mis hijos y disfrutaron mucho. Hay senderos fáciles para niños y áreas para descansar. Solo faltaban más baños.</p>
+                    <p class="reviewer">- Carlos Martínez</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="booking-section">
+            <div class="container">
+                <h2 class="section-title">Reserva tu Visita</h2>
+                <div class="booking-form-container">
+                    <form id="tourBookingForm">
+                        <div class="form-group">
+                            <label for="tourDate"><i class="fas fa-calendar-alt"></i> Fecha de Visita</label>
+                            <input type="date" id="tourDate" name="tourDate" min="" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tourType"><i class="fas fa-map-marked-alt"></i> Tipo de Recorrido</label>
+                            <select id="tourType" name="tourType" required>
+                                <option value="">Selecciona una opción</option>
+                                <option value="basico">Recorrido básico ($15.000 COP)</option>
+                                <option value="completo">Recorrido completo ($25.000 COP)</option>
+                                <option value="camping">Experiencia de camping ($50.000 COP)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="participants"><i class="fas fa-users"></i> Número de Personas</label>
+                            <input type="number" id="participants" name="participants" min="1" max="10" required>
+                        </div>
+                        
+                        <button type="submit" class="btn booking-btn">Reservar Ahora</button>
+                    </form>
+                    
+                    <div class="booking-summary">
+                        <h3>Resumen de tu Reserva</h3>
+                        <div class="summary-content">
+                            <p id="summaryDate"><i class="fas fa-calendar-check"></i> <span>Fecha no seleccionada</span></p>
+                            <p id="summaryTour"><i class="fas fa-map-marked-alt"></i> <span>Tipo de recorrido no seleccionado</span></p>
+                            <p id="summaryParticipants"><i class="fas fa-users"></i> <span>0 personas</span></p>
+                            <div class="summary-total">
+                                <h4>Total:</h4>
+                                <p id="totalCost">$0 COP</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -103,8 +159,26 @@
     
     <footer>
         <div class="container">
-            <p>&copy; 2023 Mi Soacha Turística - Todos los derechos reservados</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-envelope"></i> boquemonte@missoachaturistica.com</p>
+                    <p><i class="fas fa-phone"></i> +57 123 456 7890</p>
+                    <p><i class="fas fa-clock"></i> Horario: Todos los días 7am-5pm</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2024 Parque Boquemonte - Todos los derechos reservados</p>
         </div>
     </footer>
+
+    <script src="JS/Boquemonte.js"></script>
 </body>
 </html>

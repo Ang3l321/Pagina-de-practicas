@@ -10,54 +10,66 @@
 <body>
     <header>
         <div class="container">
-            <h1>Mi Soacha Turística</h1>
+            <a href="../index.html" class="home-button">
+                <h1>Mi Soacha Turística</h1>
+            </a>
         </div>
     </header>
     
     <main class="container">
         <section class="hero">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Salto_del_Tequendama.jpg/1200px-Salto_del_Tequendama.jpg" alt="Salto del Tequendama">
-            <div class="hero-text">
-                <h2>Humedal Neuta</h2>
-                <p>El Humedal Neuta, ubicado en Soacha, es un ecosistema vital con gran riqueza natural. Su biodiversidad y paisajes lo convierten en un lugar ideal para el ecoturismo, la educación ambiental y el avistamiento de aves. Tiene un alto potencial turístico si se protege de manera sostenible.</p>
+            <div class="hero-image">
+                <img src="../Inicio/Imagenes/Humedal.jpg" alt="Humedal Neuta">
+                <div class="hero-text-box">
+                    <h2>Humedal Neuta</h2>
+                    <p>Un oasis de biodiversidad en Soacha</p>
+                </div>
             </div>
         </section>
         
+        <section class="info-section">
+            <h2>Conoce este ecosistema único</h2>
+            <p>El Humedal Neuta es uno de los ecosistemas más importantes del municipio de Soacha, con una extensión de 24 hectáreas. Este cuerpo de agua alberga una gran diversidad de flora y fauna, siendo especialmente importante para las aves migratorias. Un espacio vital para la conservación ambiental y el disfrute de la naturaleza.</p>
+        </section>
+        
         <section class="activities">
-            <div class="activity-card">
-                <div class="activity-icon">
-                    <i class="fas fa-hiking"></i>
+            <h2 class="section-title">Experiencias</h2>
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-binoculars"></i>
+                    </div>
+                    <h3>Avistamiento de aves</h3>
+                    <p>Observa más de 80 especies de aves residentes y migratorias en su hábitat natural.</p>
                 </div>
-                <h3>Senderismo</h3>
-                <p>Explora senderos rodeados de naturaleza viva. Disfruta de un recorrido entre plantas nativas y descubre especies en riesgo de conservación mientras te conectas con el ecosistema. Una experiencia única para respirar aire puro y aprender del entorno.</p>
-            </div>
-            
-            <div class="activity-card">
-                <div class="activity-icon">
-                    <i class="fas fa-eye"></i>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Senderismo ecológico</h3>
+                    <p>Recorre los caminos alrededor del humedal y conoce su flora característica.</p>
                 </div>
-                <h3>Contemplación de Aves</h3>
-                <p>Los humedales de Soacha son hogar de aves residentes y migratorias, convirtiéndolos en un paraíso para observadores de aves y fotógrafos. ¡No olvides tus binoculares y tu guía de aves para disfrutar al máximo cada avistamiento.</p>
-            </div>
-            
-            <div class="activity-card">
-                <div class="activity-icon">
-                    <i class="fas fa-camera"></i>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>Fotografía natural</h3>
+                    <p>Captura imágenes de los paisajes y especies que habitan este ecosistema.</p>
                 </div>
-                <h3>Fotografía</h3>
-                <p>Captura la belleza natural de los humedales: paisajes impresionantes, flora exuberante y fauna silvestre. Recuerda siempre respetar el entorno y observar sin intervenir en el comportamiento de los animales.</p>
             </div>
         </section>
         
         <section class="map-section">
-            <h2>Ubicación</h2>
+            <h2 class="section-title">Ubicación</h2>
             <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.078211120728!2d-74.23016789082604!3d4.57997679537542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f757b29ebc6db%3A0xca4971b0f446bafc!2sHumedal%20Neuta!5e0!3m2!1ses!2sco!4v1744945076627!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.234567890123!2d-74.23456789012345!3d4.587654321098765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9abcdef12345%3A0x1234567890abcdef!2sHumedal%20Neuta%2C%20Soacha!5e0!3m2!1ses!2sco!4v1234567890123!5m2!1ses!2sco" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </section>
         
         <section class="reviews">
-            <h2>Reseñas de Visitantes</h2>
+            <h2 class="section-title">Reseñas de Visitantes</h2>
             <div class="review-cards">
                 <div class="review-card">
                     <div class="stars">
@@ -67,9 +79,9 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <h3>Impresionante</h3>
-                    <p>La vista es espectacular, el sonido del agua cayendo es relajante. Un lugar que todos deberían visitar al menos una vez.</p>
-                    <p class="reviewer">- María González</p>
+                    <h3>Maravilloso</h3>
+                    <p>La cantidad de aves que se pueden observar es increíble. Un lugar perfecto para desconectar de la ciudad.</p>
+                    <p class="reviewer">- Juan Pérez</p>
                 </div>
                 
                 <div class="review-card">
@@ -80,9 +92,9 @@
                         <i class="fas fa-star"></i>
                         <i class="far fa-star"></i>
                     </div>
-                    <h3>Belleza natural</h3>
-                    <p>El lugar es hermoso, aunque recomiendo ir temprano para evitar aglomeraciones. La infraestructura turística ha mejorado mucho.</p>
-                    <p class="reviewer">- Carlos Rodríguez</p>
+                    <h3>Pulmón verde</h3>
+                    <p>El humedal está bien conservado, aunque faltan más señalizaciones sobre las especies.</p>
+                    <p class="reviewer">- María Gómez</p>
                 </div>
                 
                 <div class="review-card">
@@ -93,9 +105,53 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <h3>Experiencia única</h3>
-                    <p>La energía del lugar es increíble. La cascada es más imponente de lo que imaginaba. Solo cuidado con el clima.</p>
-                    <p class="reviewer">- Ana Martínez</p>
+                    <h3>Experiencia familiar</h3>
+                    <p>Llevé a mis hijos y aprendieron mucho sobre la importancia de los humedales. Volveremos pronto.</p>
+                    <p class="reviewer">- Carlos Martínez</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="booking-section">
+            <div class="container">
+                <h2 class="section-title">Visita Guiada</h2>
+                <div class="booking-form-container">
+                    <form id="tourBookingForm">
+                        <div class="form-group">
+                            <label for="tourDate"><i class="fas fa-calendar-alt"></i> Fecha de Visita</label>
+                            <input type="date" id="tourDate" name="tourDate" min="" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tourType"><i class="fas fa-map-marked-alt"></i> Tipo de Recorrido</label>
+                            <select id="tourType" name="tourType" required>
+                                <option value="">Selecciona una opción</option>
+                                <option value="basico">Recorrido básico (Gratis)</option>
+                                <option value="guiado">Visita guiada con experto ($10.000 COP)</option>
+                                <option value="fotografia">Taller de fotografía de naturaleza ($25.000 COP)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="participants"><i class="fas fa-users"></i> Número de Personas</label>
+                            <input type="number" id="participants" name="participants" min="1" max="15" required>
+                        </div>
+                        
+                        <button type="submit" class="btn booking-btn">Reservar Visita</button>
+                    </form>
+                    
+                    <div class="booking-summary">
+                        <h3>Resumen de tu Reserva</h3>
+                        <div class="summary-content">
+                            <p id="summaryDate"><i class="fas fa-calendar-check"></i> <span>Fecha no seleccionada</span></p>
+                            <p id="summaryTour"><i class="fas fa-map-marked-alt"></i> <span>Tipo de recorrido no seleccionado</span></p>
+                            <p id="summaryParticipants"><i class="fas fa-users"></i> <span>0 personas</span></p>
+                            <div class="summary-total">
+                                <h4>Total:</h4>
+                                <p id="totalCost">$0 COP</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -103,8 +159,26 @@
     
     <footer>
         <div class="container">
-            <p>&copy; 2023 Mi Soacha Turística - Todos los derechos reservados</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-envelope"></i> humedalneuta@missoachaturistica.com</p>
+                    <p><i class="fas fa-phone"></i> +57 123 456 7890</p>
+                    <p><i class="fas fa-clock"></i> Horario: Todos los días 6am-6pm</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2024 Humedal Neuta - Todos los derechos reservados</p>
         </div>
     </footer>
+
+    <script src="JS/Humedal.js"></script>
 </body>
 </html>
