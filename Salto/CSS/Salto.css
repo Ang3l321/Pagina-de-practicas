@@ -20,20 +20,20 @@ body {
 
 /* Cambiar el color de los enlaces */
 a {
-    color: #ffffff; /* Cambia a tu color deseado */
-    text-decoration: none; /* Elimina el subrayado */
+    color: #ffffff;
+    text-decoration: none;
 }
 
 a:hover {
-    color: #ffcc00; /* Color al pasar el mouse */
-    text-decoration: underline; /* Opcional: subrayado al pasar el mouse */
+    color: #ffcc00;
+    text-decoration: underline;
 }
 
 /* Estilo para el botón */
 .btn {
     display: inline-block;
-    background-color: #A00000; /* Color de fondo */
-    color: white; /* Color del texto */
+    background-color: #A00000;
+    color: white;
     padding: 10px 20px;
     border-radius: 5px;
     text-align: center;
@@ -42,7 +42,7 @@ a:hover {
 }
 
 .btn:hover {
-    background-color: #800000; /* Color de fondo al pasar el mouse */
+    background-color: #800000;
 }
 
 /* ===== Encabezado ===== */
@@ -251,6 +251,120 @@ header p {
     font-style: italic;
 }
 
+/* ===== Sección de Reservas ===== */
+.booking-section {
+    background-color: #fff;
+    padding: 60px 0;
+    margin: 60px 0;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+#tourBookingForm {
+    display: grid;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #A00000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #A00000;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(160, 0, 0, 0.1);
+}
+
+.booking-btn {
+    background-color: #A00000;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.booking-btn:hover {
+    background-color: #800000;
+    transform: translateY(-2px);
+}
+
+.booking-summary {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    border: 2px solid #A00000;
+}
+
+.booking-summary h3 {
+    color: #A00000;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.summary-content p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+.summary-content i {
+    color: #A00000;
+    width: 20px;
+    text-align: center;
+}
+
+.summary-total {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px dashed #A00000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summary-total h4 {
+    color: #A00000;
+    font-size: 1.2rem;
+}
+
+#totalCost {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #A00000;
+}
+
 /* ===== Pie de Página ===== */
 footer {
     background: linear-gradient(135deg, #A00000, #800000);
@@ -330,6 +444,10 @@ footer {
 
     .map-container {
         height: 400px;
+    }
+    
+    .booking-form-container {
+        grid-template-columns: 1fr;
     }
 }
 

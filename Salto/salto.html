@@ -66,7 +66,6 @@
             <div class="map-container">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d9459.209130127425!2d-74.30160381582058!3d4.574702014035597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1ssalto%20del%20tequendama!5e0!3m2!1ses!2sco!4v1745543717034!5m2!1ses!2sco" allowfullscreen="" loading="lazy"></iframe>
             </div>
-            <a href="#seccion-deseada" class="btn">Ir a la sección</a>
         </section>
         
         <section class="reviews">
@@ -109,6 +108,63 @@
                     <h3>Experiencia única</h3>
                     <p>La energía del lugar es increíble. La cascada es más imponente de lo que imaginaba. Solo cuidado con el clima.</p>
                     <p class="reviewer">- Ana Martínez</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nueva sección de reservas -->
+        <section class="booking-section">
+            <div class="container">
+                <h2 class="section-title">Reserva tu Recorrido</h2>
+                <div class="booking-form-container">
+                    <form id="tourBookingForm">
+                        <div class="form-group">
+                            <label for="tourDate"><i class="fas fa-calendar-alt"></i> Fecha del Recorrido</label>
+                            <input type="date" id="tourDate" name="tourDate" min="" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tourTime"><i class="fas fa-clock"></i> Hora del Recorrido</label>
+                            <select id="tourTime" name="tourTime" required>
+                                <option value="">Selecciona una hora</option>
+                                <option value="08:00">8:00 AM</option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="12:00">12:00 PM</option>
+                                <option value="14:00">2:00 PM</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="transportType"><i class="fas fa-bus"></i> Transporte</label>
+                            <select id="transportType" name="transportType" required>
+                                <option value="">Selecciona transporte</option>
+                                <option value="shuttle">Shuttle Turístico ($20.000 COP)</option>
+                                <option value="private">Transporte Privado ($50.000 COP)</option>
+                                <option value="self">Mi propio transporte</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="participants"><i class="fas fa-users"></i> Número de Personas</label>
+                            <input type="number" id="participants" name="participants" min="1" max="15" required>
+                        </div>
+                        
+                        <button type="submit" class="btn booking-btn">Reservar Ahora</button>
+                    </form>
+                    
+                    <div class="booking-summary">
+                        <h3>Resumen de tu Reserva</h3>
+                        <div class="summary-content">
+                            <p id="summaryDate"><i class="fas fa-calendar-check"></i> <span>Fecha no seleccionada</span></p>
+                            <p id="summaryTime"><i class="fas fa-clock"></i> <span>Hora no seleccionada</span></p>
+                            <p id="summaryTransport"><i class="fas fa-bus"></i> <span>Transporte no seleccionado</span></p>
+                            <p id="summaryParticipants"><i class="fas fa-users"></i> <span>0 personas</span></p>
+                            <div class="summary-total">
+                                <h4>Total:</h4>
+                                <p id="totalCost">$0 COP</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
