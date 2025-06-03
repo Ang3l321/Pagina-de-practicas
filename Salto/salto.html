@@ -17,7 +17,93 @@
     </header>
     
     <main class="container">
-        <!-- ... [secciones previas sin cambios] ... -->
+        <section class="hero">
+            <div class="hero-image">
+                <img src="../Inicio/Imagenes/Tequendama.png" alt="Salto del Tequendama">
+                <div class="hero-text-box">
+                    <h2>Salto del Tequendama</h2>
+                    <p>Maravilla natural de Colombia</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="info-section">
+            <h2>Conoce esta maravilla</h2>
+            <p>El Salto del Tequendama es una imponente cascada de aproximadamente 157 metros de altura ubicada a solo 30 km de Bogotá. Este monumento natural es uno de los más importantes del departamento de Cundinamarca y ofrece un espectáculo visual único.</p>
+        </section>
+        
+        <section class="activities">
+            <h2 class="section-title">Actividades</h2>
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-hiking"></i>
+                    </div>
+                    <h3>Senderismo</h3>
+                    <p>Disfruta de caminatas ecológicas por los alrededores de la cascada, con rutas para todos los niveles y paisajes impresionantes.</p>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Contemplación</h3>
+                    <p>Admira la majestuosidad de esta cascada desde diferentes miradores estratégicos que ofrecen vistas panorámicas únicas.</p>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>Fotografía</h3>
+                    <p>Captura imágenes espectaculares del Salto del Tequendama, un lugar perfecto para fotógrafos profesionales y aficionados.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="map-section">
+            <h2 class="section-title">Ubicación</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.106649656718!2d-74.29596189082608!3d4.574859495380524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f7495d3fda26d%3A0xf7de20792e983ca2!2sSalto%20del%20Tequendama!5e0!3m2!1ses!2sco!4v1745796985111!5m2!1ses!2sco" 
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        title="Ubicación del Salto del Tequendama">
+                </iframe>
+            </div>
+        </section>
+
+        <section class="reviews">
+            <h2 class="section-title">Reseñas de Visitantes</h2>
+            <div class="review-cards">
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Impresionante</h3>
+                    <p>La vista es espectacular, el sonido del agua cayendo es relajante. Un lugar que todos deberían visitar al menos una vez.</p>
+                    <p class="reviewer">- María González</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <h3>Belleza natural</h3>
+                    <p>El lugar es hermoso, aunque recomiendo ir temprano para evitar aglomeraciones. La infraestructura turística ha mejorado mucho.</p>
+                    <p class="reviewer">- Carlos Rodríguez</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <h3>Experiencia única</h3>
+                    <p>La energía del lugar es increíble. La cascada es más imponente de lo que imaginaba. Solo cuidado con el clima.</p>
+                    <p class="reviewer">- Ana Martínez</p>
+                </div>
+            </div>
+        </section>
 
         <section class="booking-section">
             <div class="container">
@@ -28,7 +114,6 @@
                             <label for="tourDate"><i class="fas fa-calendar-alt"></i> Fecha del Recorrido</label>
                             <input type="date" id="tourDate" name="tourDate" required>
                         </div>
-                        
                         <div class="form-group">
                             <label for="tourTime"><i class="fas fa-clock"></i> Hora del Recorrido</label>
                             <select id="tourTime" name="tourTime" required>
@@ -39,7 +124,6 @@
                                 <option value="14:00">2:00 PM</option>
                             </select>
                         </div>
-                        
                         <div class="form-group">
                             <label for="transportType"><i class="fas fa-bus"></i> Transporte</label>
                             <select id="transportType" name="transportType" required>
@@ -49,15 +133,13 @@
                                 <option value="self">Mi propio transporte</option>
                             </select>
                         </div>
-                        
                         <div class="form-group">
                             <label for="participants"><i class="fas fa-users"></i> Número de Personas</label>
                             <input type="number" id="participants" name="participants" min="1" max="15" required>
                         </div>
-                        
                         <button type="submit" class="btn booking-btn">Reservar Ahora</button>
                     </form>
-                    
+
                     <div class="booking-summary" style="display: none;">
                         <h3>Resumen de tu Reserva</h3>
                         <div class="summary-content">
@@ -78,10 +160,26 @@
 
     <footer>
         <div class="container">
-            <!-- pie de página -->
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-envelope"></i> info@missoachaturistica.com</p>
+                    <p><i class="fas fa-phone"></i> +57 123 456 7890</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2025 Mi Soacha Turística - Todos los derechos reservados</p>
         </div>
     </footer>
 
     <script src="JS/Salto.js"></script>
 </body>
 </html>
+
