@@ -199,5 +199,26 @@
     </footer>
 
     <script src="JS/Salto.js"></script>
+    <script>
+  document.querySelector("form").addEventListener("submit", function(e) {
+    e.preventDefault(); // Evita que se recargue la página
+
+    const reserva = {
+      fecha: document.querySelector("#fecha").value,
+      hora: document.querySelector("#hora").value,
+      transporte: document.querySelector("#transporte").value,
+      personas: document.querySelector("#personas").value
+    };
+
+    fetch("http://localhost:3000/reserva", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(reserva)
+    })
+    .then(res => res.text())
+    .then(msg => alert(msg))
+    .catch(err => alert("Error al enviar la reserva"));
+  });
+</script>
 </body>
 </html>
