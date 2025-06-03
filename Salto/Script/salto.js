@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const tourBookingForm = document.getElementById('tourBookingForm');
     const summaryDate = document.querySelector('#summaryDate span');
     const summaryTime = document.querySelector('#summaryTime span');
@@ -19,14 +19,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const today = new Date().toISOString().split('T')[0];
     document.getElementById('tourDate').min = today;
 
-    // Actualizar resumen
     function updateSummary() {
         const date = document.getElementById('tourDate').value;
         const time = document.getElementById('tourTime').value;
         const transport = document.getElementById('transportType').value;
         const participants = parseInt(document.getElementById('participants').value) || 0;
 
-        // Formatear fecha si existe
         const formattedDate = date ? new Date(date).toLocaleDateString('es-CO', {
             weekday: 'long',
             year: 'numeric',
@@ -36,8 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         summaryDate.textContent = formattedDate;
         summaryTime.textContent = time || 'No seleccionada';
-        
-        switch(transport) {
+
+        switch (transport) {
             case 'shuttle':
                 summaryTransport.textContent = 'Shuttle Turístico ($20.000 COP)';
                 break;
@@ -53,16 +51,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
         summaryParticipants.textContent = participants === 1 ? '1 persona' : `${participants} personas`;
 
-        // Calcular total
         const transportCost = transportPrices[transport] || 0;
         const total = (entryFee + transportCost) * participants;
         totalCost.textContent = `$${total.toLocaleString('es-CO')} COP`;
     }
 
-    // Mostrar/ocultar resumen
     function toggleSummaryVisibility() {
         const date = document.getElementById('tourDate').value;
-        if (date) {
+        const time = document.getElementById('tourTime').value;
+        const transport = document.getElementById('transportType').value;
+        const participants = document.getElementById('participants').value;
+
+        if (date && time && transport && participants) {
             bookingSummary.style.display = 'block';
         } else {
             bookingSummary.style.display = 'none';
@@ -71,20 +71,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Event listeners
     ['tourDate', 'tourTime', 'transportType', 'participants'].forEach(id => {
-        document.getElementById(id).addEventListener('change', function() {
+        document.getElementById(id).addEventListener('change', function () {
+            console.log(`${id} cambió a: ${this.value}`);
             updateSummary();
             toggleSummaryVisibility();
         });
     });
 
-    // Envío del formulario
-    tourBookingForm.addEventListener('submit', function(event) {
+    tourBookingForm.addEventListener('submit', function (event) {
         event.preventDefault();
-        
-        // Validar campos requeridos
+
         const requiredFields = ['tourDate', 'tourTime', 'transportType', 'participants'];
         let isValid = true;
-        
+
         requiredFields.forEach(fieldId => {
             const field = document.getElementById(fieldId);
             if (!field.value) {
@@ -96,7 +95,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         if (isValid) {
-            // Mostrar confirmación
             const confirmation = document.createElement('div');
             confirmation.className = 'confirmation-message';
             confirmation.innerHTML = `
@@ -109,8 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <button class="btn" onclick="this.parentElement.parentElement.remove()">Aceptar</button>
                 </div>
             `;
-            
-            // Estilo para el mensaje de confirmación (puedes mover esto a CSS)
+
             confirmation.style.position = 'fixed';
             confirmation.style.top = '0';
             confirmation.style.left = '0';
@@ -121,10 +118,9 @@ document.addEventListener('DOMContentLoaded', function() {
             confirmation.style.justifyContent = 'center';
             confirmation.style.alignItems = 'center';
             confirmation.style.zIndex = '1000';
-            
+
             document.body.appendChild(confirmation);
-            
-            // Opcional: Resetear formulario
+
             tourBookingForm.reset();
             bookingSummary.style.display = 'none';
         } else {
@@ -132,6 +128,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Inicializar
     toggleSummaryVisibility();
 });
